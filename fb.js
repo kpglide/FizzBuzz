@@ -29,6 +29,7 @@ $(document).ready(function() {
 		
 		if (user_input == NaN || user_input % 1 != 0) {
 			$("input").val('Error: You must enter a whole number');
+			ready = true;
 		} else {
 			for (var counter = 1; counter <= user_input; counter++) {
 				if (counter % 5 == 0 && counter % 3 == 0) {
