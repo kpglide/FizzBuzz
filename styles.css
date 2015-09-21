@@ -7,6 +7,10 @@ div {
 	margin-bottom: 25px;
 }
 
+input {
+	width: 20%;
+}
+
 button {
 	width: 10%;
 	height: 100%;
