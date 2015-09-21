@@ -5,6 +5,7 @@ $(document).ready(function() {
 	$('#submit').on('click', fizzHandler); 
 	$('input').keypress(function(event) {
 		if (event.which == 13) {
+			console.log('pressed');
 			fizzHandler();
 		}
 	});
@@ -13,7 +14,6 @@ $(document).ready(function() {
 	function fizzHandler() {
 		if (ready == true) {
 			fizzBuzz();
-			ready = false;
 		} 
 	}
 
@@ -26,10 +26,11 @@ $(document).ready(function() {
 
 	function fizzBuzz() {
 		user_input = parseInt($("input").val());
-		
+		console.log(user_input);
 		if (user_input == NaN || user_input % 1 != 0) {
+			reset();
 			$("input").val('Error: You must enter a whole number');
-			ready = true;
+			console.log(ready);
 		} else {
 			for (var counter = 1; counter <= user_input; counter++) {
 				if (counter % 5 == 0 && counter % 3 == 0) {
@@ -48,6 +49,7 @@ $(document).ready(function() {
 					$('#Fizz-Buzz-Container').append(new_elem);
 				}
 			}
+			ready = false;
 		}
 		
 	}
